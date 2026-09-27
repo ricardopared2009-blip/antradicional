@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adidas Venezuela | Compra y Venta Auténtica 100% Verificada</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts: Oswald (Athletic) & Plus Jakarta Sans (Modern Clean) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --adidas-black: #0d0d0e;
+      --adidas-dark-card: #161618;
+      --adidas-border: #27272a;
+      --adidas-volt: #ccff00;
+      --adidas-volt-hover: #b3eb00;
+      --adidas-cyan: #00f0ff;
+      --adidas-white: #ffffff;
+      --adidas-gray-light: #f4f4f5;
+      --adidas-gray-muted: #a1a1aa;
+      --font-heading: 'Oswald', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--adidas-black);
+      color: #e4e4e7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, .font-heading {
+      font-family: var(--font-heading);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Custom Utility Classes */
+    .bg-adidas-dark { background-color: var(--adidas-black) !important; }
+    .bg-adidas-card { background-color: var(--adidas-dark-card) !important; }
+    .border-adidas { border-color: var(--adidas-border) !important; }
+    .text-volt { color: var(--adidas-volt) !important; }
+    .bg-volt { background-color: var(--adidas-volt) !important; color: #000 !important; }
+    .bg-volt:hover { background-color: var(--adidas-volt-hover) !important; color: #000 !important; }
+    
+    .btn-adidas-primary {
+      background-color: var(--adidas-volt);
+      color: #000;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 4px;
+      border: none;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+    .btn-adidas-primary:hover {
+      background-color: var(--adidas-volt-hover);
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(204, 255, 0, 0.25);
+    }
+
+    .btn-adidas-outline {
+      background: transparent;
+      color: #fff;
+      border: 2px solid var(--adidas-white);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.75rem 1.75rem;
+      border-radius: 4px;
+      transition: all 0.25s ease;
+      text-transform: uppercase;
+    }
+    .btn-adidas-outline:hover {
+      background: #fff;
+      color: #000;
+      transform: translateY(-2px);
+    }
+
+    /* Top Bar Carousel */
+    .top-bar-announcement {
+      background: #000;
+      border-bottom: 1px solid var(--adidas-border);
+      font-size: 0.825rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* Glass Navbar */
+    .adidas-navbar {
+      background-color: rgba(13, 13, 14, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--adidas-border);
+      position: sticky;
+      top: 0;
+      z-index: 1040;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(22,22,24,0.95) 100%),
+                  url('https://images.unsplash.com/photo-1518002171953-a080ee817e1f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--adidas-border);
+    }
+
+    /* Trust Badge Cards */
+    .trust-card {
+      background: var(--adidas-dark-card);
+      border: 1px solid var(--adidas-border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .trust-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--adidas-volt);
+    }
+
+    /* Category Cards Hover Effect */
+    .category-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      height: 320px;
+      border: 1px solid var(--adidas-border);
+    }
+    .category-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .category-card:hover img {
+      transform: scale(1.08);
+    }
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 10%, rgba(0,0,0,0.1) 80%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+    }
+
+    /* Product Cards */
+    .product-card {
+      background: var(--adidas-dark-card);
+      border: 1px solid var(--adidas-border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      border-color: var(--adidas-volt);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+    .product-img-wrapper {
+      position: relative;
+      height: 260px;
+      background: #000;
+      overflow: hidden;
+    }
+    .product-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover .product-img-wrapper img {
+      transform: scale(1.05);
+    }
+    .badge-sku {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid var(--adidas-volt);
+      color: var(--adidas-volt);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    .size-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--adidas-border);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .size-chip:hover, .size-chip.active {
+      background: var(--adidas-volt);
+      color: #000;
+      border-color: var(--adidas-volt);
+      font-weight: 700;
+    }
+
+    /* Floating Widgets */
+    .floating-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1050;
+    }
+    .float-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      position: relative;
+    }
+    .float-whatsapp {
+      background-color: #25d366;
+    }
+    .float-whatsapp:hover {
+      background-color: #1ebd56;
+      color: white;
+      transform: scale(1.1);
+    }
+    .float-instagram {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+    .float-instagram:hover {
+      transform: scale(1.1);
+      color: white;
+    }
+    .pulse-badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 14px;
+      height: 14px;
+      background-color: #00f0ff;
+      border: 2px solid var(--adidas-black);
+      border-radius: 50%;
+      animation: pulse 1.8s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 240, 255, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
+    }
+
+    /* Re-Commerce Steps */
+    .step-number {
+      width: 42px;
+      height: 42px;
+      background: var(--adidas-volt);
+      color: #000;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    /* Modal Tweaks */
+    .modal-content {
+      background-color: var(--adidas-dark-card);
+      border: 1px solid var(--adidas-border);
+      color: #fff;
+    }
+    .form-control, .form-select {
+      background-color: #0d0d0e;
+      border: 1px solid var(--adidas-border);
+      color: #fff;
+    }
+    .form-control:focus, .form-select:focus {
+      background-color: #0d0d0e;
+      border-color: var(--adidas-volt);
+      color: #fff;
+      box-shadow: 0 0 0 0.25rem rgba(204, 255, 0, 0.15);
+    }
+
+    /* Toast Notification */
+    .toast-adidas {
+      background: var(--adidas-dark-card);
+      border: 1px solid var(--adidas-volt);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar-announcement py-2 text-center text-uppercase">
+    <div class="container">
+      <div id="announcementCarousel" class="carousel slide vertical" data-bs-ride="carousel" data-bs-interval="3500">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <span class="text-volt"><i class="fa-solid fa-truck-fast me-2"></i></span> Envíos <strong>GRATIS</strong> a todo el país por MRW / Zoom en compras mayores a $80
+          </div>
+          <div class="carousel-item">
+            <span class="text-volt"><i class="fa-solid fa-shield-check me-2"></i></span> 100% Auténtico Garantizado | Verificación Física & Código SKU
+          </div>
+          <div class="carousel-item">
+            <span class="text-volt"><i class="fa-solid fa-credit-card me-2"></i></span> Paga a cuotas con <strong>Cashea</strong> / Tasa Oficial BCV del Día
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark adidas-navbar py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <i class="fa-brands fa-adidas fa-2x text-white"></i>
+        <div class="d-flex flex-column lh-1">
+          <span class="font-heading fs-4 fw-bold tracking-wider text-white">ADIDAS <span class="text-volt">VNZLA</span></span>
+          <span class="text-uppercase text-muted" style="font-size: 0.65rem; letter-spacing: 1px;">Store & Trade-In Oficial</span>
+        </div>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Search bar -->
+        <div class="mx-lg-auto my-3 my-lg-0 w-100 max-w-400px position-relative px-lg-3" style="max-width: 360px;">
+          <div class="input-group">
+            <span class="input-group-text bg-dark border-adidas text-muted"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" id="searchInput" class="form-control form-control-sm border-adidas" placeholder="Buscar Samba, Ultraboost, Vinotinto...">
+          </div>
+        </div>
+
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#catalog">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#recommerce">Vender Prenda</a></li>
+          <li class="nav-item"><a class="nav-link text-uppercase fw-semibold" href="#size-assistant">Guía Tallas</a></li>
+          <li class="nav-item"><a class="nav-link text-uppercase fw-semibold text-volt" href="#ai-lab"><i class="fa-solid fa-wand-magic-sparkles me-1"></i> AI Lab</a></li>
+          
+          <!-- Currency Switcher Toggle -->
+          <li class="nav-item ms-lg-2 my-2 my-lg-0">
+            <div class="btn-group btn-group-sm w-100" role="group">
+              <button type="button" id="btnUSD" class="btn btn-dark border-adidas active-curr btn-sm fw-bold">USD $</button>
+              <button type="button" id="btnVES" class="btn btn-outline-secondary border-adidas btn-sm fw-bold">VES (BCV)</button>
+            </div>
+          </li>
+
+          <!-- Cart Icon Drawer trigger -->
+          <li class="nav-item ms-lg-2">
+            <button class="btn btn-dark border-adidas position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">
+              <i class="fa-solid fa-bag-shopping text-volt"></i>
+              <span id="cartBadgeCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-section py-5">
+    <div class="container py-lg-5">
+      <div class="row align-items-center">
+        <div class="col-lg-7 text-start">
+          <div class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-adidas-card border border-adidas rounded-pill mb-3">
+            <span class="pulse-badge position-static d-inline-block"></span>
+            <span class="text-uppercase fw-bold text-volt" style="font-size: 0.75rem; letter-spacing: 1px;">
+              Inventario 100% Verificado en Venezuela
+            </span>
+          </div>
+          <h1 class="display-3 fw-bold text-white mb-3">
+            El Dominio Deportivo e Icónico de <span class="text-volt">Adidas</span>, Directo a tu Puerta.
+          </h1>
+          <p class="lead text-gray-300 mb-4" style="font-size: 1.15rem; max-width: 620px;">
+            Catálogo verificado 100% original. Compra tus referencias favoritas con Pago Móvil, Zelle o financiamiento en cuotas con Cashea, o vende las prendas que ya no usas.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#catalog" class="btn btn-adidas-primary"><i class="fa-solid fa-store me-2"></i> Explorar Catálogo Auténtico</a>
+            <a href="#recommerce" class="btn btn-adidas-outline"><i class="fa-solid fa-arrows-rotate me-2"></i> Cotizar / Vender mi Prenda</a>
+          </div>
+
+          <!-- Quick Statistics -->
+          <div class="row mt-5 pt-3 border-top border-secondary opacity-75">
+            <div class="col-4">
+              <h3 class="fw-bold text-white mb-0">100%</h3>
+              <p class="small text-muted mb-0">Auténtico con SKU</p>
+            </div>
+            <div class="col-4">
+              <h3 class="fw-bold text-volt mb-0">+2,500</h3>
+              <p class="small text-muted mb-0">Envíos Nacionales</p>
+            </div>
+            <div class="col-4">
+              <h3 class="fw-bold text-white mb-0">BCV</h3>
+              <p class="small text-muted mb-0">Tasa Oficial Automática</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-4 bg-adidas-dark border-bottom border-adidas">
+    <div class="container">
+      <div class="row g-3">
+        <div class="col-md-3 col-6">
+          <div class="trust-card h-100 d-flex align-items-center gap-3">
+            <i class="fa-solid fa-shield-halved fa-2x text-volt"></i>
+            <div>
+              <h6 class="fw-bold text-white mb-1">Autenticidad 100%</h6>
+              <p class="small text-muted mb-0">Verificación física y código SKU antes del despacho.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="trust-card h-100 d-flex align-items-center gap-3">
+            <i class="fa-solid fa-bolt fa-2x text-volt"></i>
+            <div>
+              <h6 class="fw-bold text-white mb-1">Checkout Directo</h6>
+              <p class="small text-muted mb-0">Pago Móvil, Zelle y Cashea sin demoras por chat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="trust-card h-100 d-flex align-items-center gap-3">
+            <i class="fa-solid fa-ruler-combined fa-2x text-volt"></i>
+            <div>
+              <h6 class="fw-bold text-white mb-1">Guía de Tallas Real</h6>
+              <p class="small text-muted mb-0">Asistente en CM y ajuste por tipo de corte.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="trust-card h-100 d-flex align-items-center gap-3">
+            <i class="fa-solid fa-truck-ramp-box fa-2x text-volt"></i>
+            <div>
+              <h6 class="fw-bold text-white mb-1">Envíos Express</h6>
+              <p class="small text-muted mb-0">Despachos en 24-48h por MRW, ZOOM y Tealca.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-adidas-dark">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+          <span class="text-volt font-heading fw-bold">LÍNEAS DESTACADAS</span>
+          <h2 class="display-6 fw-bold text-white mb-0">EXPLORA POR CATEGORÍA</h2>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Football -->
+        <div class="col-lg-3 col-md-6">
+          <div class="category-card" onclick="filterCategory('Fútbol')">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" alt="Fútbol y Selecciones">
+            <div class="category-overlay">
+              <span class="badge bg-danger mb-2 w-auto align-self-start">SELECCIONES</span>
+              <h4 class="fw-bold text-white mb-1">Fútbol & Vinotinto</h4>
+              <p class="small text-gray-300 mb-2">Camisetas oficiales y botines de alto nivel</p>
+              <a href="#catalog" class="text-volt fw-bold text-decoration-none small">Ver colección <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Running & Training -->
+        <div class="col-lg-3 col-md-6">
+          <div class="category-card" onclick="filterCategory('Running')">
+            <img src="https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=800&q=80" alt="Running & Training">
+            <div class="category-overlay">
+              <span class="badge bg-primary mb-2 w-auto align-self-start">PERFORMANCE</span>
+              <h4 class="fw-bold text-white mb-1">Running & Training</h4>
+              <p class="small text-gray-300 mb-2">Ultraboost, Adizero y ropa AEROREADY</p>
+              <a href="#catalog" class="text-volt fw-bold text-decoration-none small">Ver colección <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Originals -->
+        <div class="col-lg-3 col-md-6">
+          <div class="category-card" onclick="filterCategory('Originals')">
+            <img src="https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=800&q=80" alt="Adidas Originals">
+            <div class="category-overlay">
+              <span class="badge bg-warning text-dark mb-2 w-auto align-self-start">LIFESTYLE</span>
+              <h4 class="fw-bold text-white mb-1">Adidas Originals</h4>
+              <p class="small text-gray-300 mb-2">Samba, Gazelle, Campus y chaquetas retro</p>
+              <a href="#catalog" class="text-volt fw-bold text-decoration-none small">Ver colección <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outlet -->
+        <div class="col-lg-3 col-md-6">
+          <div class="category-card" onclick="filterCategory('Outlet')">
+            <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=800&q=80" alt="Outlet y Ofertas">
+            <div class="category-overlay">
+              <span class="badge bg-success mb-2 w-auto align-self-start">HASTA 40% OFF</span>
+              <h4 class="fw-bold text-white mb-1">Outlet & Liquidación</h4>
+              <p class="small text-gray-300 mb-2">Oportunidades de fin de temporada</p>
+              <a href="#catalog" class="text-volt fw-bold text-decoration-none small">Ver ofertas <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="catalog" class="py-5 bg-adidas-dark border-top border-adidas">
+    <div class="container">
+      <div class="row align-items-center mb-4">
+        <div class="col-md-6">
+          <span class="text-volt font-heading fw-bold">CATÁLOGO VERIFICADO</span>
+          <h2 class="display-6 fw-bold text-white mb-0">PRODUCTOS DESTACADOS</h2>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+          <div class="btn-group flex-wrap" role="group" id="filterTabs">
+            <button class="btn btn-sm btn-dark border-adidas active" onclick="filterCategory('Todos')">Todos</button>
+            <button class="btn btn-sm btn-dark border-adidas" onclick="filterCategory('Originals')">Originals</button>
+            <button class="btn btn-sm btn-dark border-adidas" onclick="filterCategory('Fútbol')">Fútbol</button>
+            <button class="btn btn-sm btn-dark border-adidas" onclick="filterCategory('Running')">Running</button>
+            <button class="btn btn-sm btn-dark border-adidas" onclick="filterCategory('Outlet')">Outlet</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Grid Container -->
+      <div class="row g-4" id="productGrid">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <section id="recommerce" class="py-5 bg-adidas-card border-top border-bottom border-adidas">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <span class="badge bg-volt text-dark font-heading px-3 py-2 mb-2">RE-COMMERCE / TRADE-IN</span>
+          <h2 class="display-5 fw-bold text-white mb-3">¿TIENES INDUMENTARIA ADIDAS QUE YA NO USAS?</h2>
+          <p class="text-gray-300 lead mb-4">
+            Véndelas directamente o utilízalas como parte de pago para estrenar un nuevo lanzamiento. Proceso 100% transparente con pago inmediato.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="d-flex align-items-start gap-3">
+              <div class="step-number">1</div>
+              <div>
+                <h5 class="fw-bold text-white mb-1">Ingresa los datos y fotos</h5>
+                <p class="small text-muted mb-0">Indica el modelo, talla y estado (Excelente, Bueno, Usado).</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3">
+              <div class="step-number">2</div>
+              <div>
+                <h5 class="fw-bold text-white mb-1">Valoración en < 4 horas</h5>
+                <p class="small text-muted mb-0">Verificamos el SKU y te enviamos una oferta de compra o crédito de canje.</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3">
+              <div class="step-number">3</div>
+              <div>
+                <h5 class="fw-bold text-white mb-1">Recibe dinero o estrena</h5>
+                <p class="small text-muted mb-0">Cobro por Pago Móvil / Zelle o bono adicional +15% para compras en tienda.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card bg-adidas-dark border-adidas p-4 rounded-3 shadow-lg">
+            <h4 class="fw-bold text-white mb-3"><i class="fa-solid fa-calculator text-volt me-2"></i> COTIZADOR INSTANTÁNEO DE CANJE</h4>
+            <form id="tradeInForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small text-muted">Tipo de Prenda</label>
+                  <select class="form-select" id="tradeType" required>
+                    <option value="Calzado Originals">Calzado Originals (Samba, Gazelle, etc)</option>
+                    <option value="Calzado Performance">Calzado Performance (Running/Fútbol)</option>
+                    <option value="Camiseta Oficial">Camiseta Oficial / Selección</option>
+                    <option value="Chaqueta/Sudadera">Chaqueta / Sudadera Retro</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small text-muted">Condición del Artículo</label>
+                  <select class="form-select" id="tradeCondition" required>
+                    <option value="Nuevo con etiquetas">Nuevo con etiquetas (100%)</option>
+                    <option value="Como nuevo sin caja">Como nuevo / Excelente estado (85-90%)</option>
+                    <option value="Usado en buen estado">Usado en buen estado (70-80%)</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small text-muted">Modelo / Referencia SKU (Si lo conoces)</label>
+                  <input type="text" class="form-control" id="tradeSku" placeholder="Ej: Adidas Samba OG B75806">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small text-muted">Talla del Artículo</label>
+                  <input type="text" class="form-control" id="tradeSize" placeholder="Ej: US 9.5 / Talla M" required>
+                </div>
+
+                <!-- Live estimation calculation output -->
+                <div class="col-12">
+                  <div class="p-3 border border-adidas bg-dark rounded d-flex align-items-center justify-content-between">
+                    <div>
+                      <span class="small text-muted d-block">Valor Estimado de Cotización:</span>
+                      <h3 class="fw-bold text-volt mb-0" id="estimatedValue">$45.00 USD</h3>
+                      <span class="small text-muted" id="estimatedVes">~ 1,642.50 VES (BCV)</span>
+                    </div>
+                    <span class="badge bg-success text-white px-3 py-2"><i class="fa-solid fa-gift me-1"></i> +15% Crédito en Tienda</span>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-adidas-primary w-100 py-3">
+                    <i class="fa-brands fa-whatsapp me-2"></i> Enviar Cotización por WhatsApp (+584127993831)
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="size-assistant" class="py-5 bg-adidas-dark border-bottom border-adidas">
+    <div class="container">
+      <div class="text-center max-w-700px mx-auto mb-5" style="max-width: 700px;">
+        <span class="text-volt font-heading fw-bold">FIT & SIZE ASSIST</span>
+        <h2 class="display-6 fw-bold text-white">ASISTENTE DINÁMICO DE TALLAS</h2>
+        <p class="text-muted">Eliminamos la incertidumbre de compra. Calcula tu talla exacta en centímetros de acuerdo al tipo de horma de cada línea Adidas.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card bg-adidas-card border-adidas p-4">
+            <ul class="nav nav-pills nav-justified mb-4" id="sizePillsTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active bg-dark border-adidas text-white fw-bold" id="footwear-tab" data-bs-toggle="pill" data-bs-target="#pills-footwear" type="button">
+                  <i class="fa-solid fa-shoe-prints me-2"></i> Calzado (Zapatillas)
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link bg-dark border-adidas text-white fw-bold ms-2" id="apparel-tab" data-bs-toggle="pill" data-bs-target="#pills-apparel" type="button">
+                  <i class="fa-solid fa-shirt me-2"></i> Ropa / Camisetas
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="pills-tabContent">
+              <!-- Footwear Calculator -->
+              <div class="tab-pane fade show active" id="pills-footwear">
+                <div class="row align-items-center g-4">
+                  <div class="col-md-6">
+                    <label class="form-label text-white fw-semibold">Medida de tu pie en Centímetros (cm):</label>
+                    <input type="number" step="0.5" min="20" max="35" id="footCmInput" class="form-control form-control-lg" placeholder="Ej. 26.5" value="26.5">
+                    <div class="mt-3">
+                      <label class="form-label text-white fw-semibold">Línea de Calzado:</label>
+                      <select id="shoeFitType" class="form-select">
+                        <option value="slim">Adidas Originals (Horma Ajustada - Ej. Samba/Gazelle)</option>
+                        <option value="regular">Running / Performance (Horma Estándar - Ej. Ultraboost)</option>
+                        <option value="wide">Fútbol Tacos (Horma Ajustada para Ajuste de Campo)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-4 bg-dark border border-adidas rounded text-center">
+                      <span class="small text-muted d-block text-uppercase">Talla Recomendada</span>
+                      <h1 class="display-3 fw-bold text-volt my-1" id="recommendedSizeResult">US 8.5</h1>
+                      <span class="badge bg-secondary mb-2" id="recommendedEur">EUR 42 | 26.5 CM</span>
+                      <p class="small text-muted mb-0 mt-2" id="fitAdviceText">
+                        <strong>Consejo de Ajuste:</strong> Para Samba / Gazelle recomendamos pedir media talla más (+0.5) para mayor comodidad en empeine ancho.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Apparel Calculator -->
+              <div class="tab-pane fade" id="pills-apparel">
+                <div class="row align-items-center g-4">
+                  <div class="col-md-6">
+                    <label class="form-label text-white fw-semibold">Contorno de Pecho (cm):</label>
+                    <input type="number" id="chestCmInput" class="form-control form-control-lg" placeholder="Ej. 98" value="98">
+                    <div class="mt-3">
+                      <label class="form-label text-white fw-semibold">Preferencia de Corte:</label>
+                      <select id="apparelFitPref" class="form-select">
+                        <option value="slim">Slim Fit (Ajustado al cuerpo - Jugador)</option>
+                        <option value="regular">Regular Fit (Corte clásico cómodo)</option>
+                        <option value="oversized">Oversized / Retro (Holgado Streetwear)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="p-4 bg-dark border border-adidas rounded text-center">
+                      <span class="small text-muted d-block text-uppercase">Talla de Ropa Recomendada</span>
+                      <h1 class="display-3 fw-bold text-volt my-1" id="recommendedApparelResult">M</h1>
+                      <span class="badge bg-secondary mb-2">Chest 96-102 cm</span>
+                      <p class="small text-muted mb-0 mt-2" id="apparelFitAdvice">
+                        Ajuste ideal para estilo regular urbano y deportivo.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ai-lab" class="py-5 bg-adidas-card border-bottom border-adidas">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <span class="badge bg-primary text-white font-heading px-3 py-2 mb-2"><i class="fa-solid fa-wand-magic-sparkles me-1"></i> GEMINI 3.1 FLASH IMAGE LAB</span>
+          <h2 class="display-6 fw-bold text-white mb-3">VISUALIZA TU CONJUNTO ADIDAS EN TIEMPO REAL</h2>
+          <p class="text-gray-300 mb-4">
+            ¿Buscas una combinación de colores o un modelo específico? Describe la prenda Adidas de tus sueños y nuestro motor de IA fotorrealista generará la vista previa al instante.
+          </p>
+
+          <form id="aiImageForm">
+            <div class="mb-3">
+              <label class="form-label text-white fw-semibold">Descripción del Producto Adidas:</label>
+              <textarea id="aiPromptInput" class="form-control" rows="3" placeholder="Ej: A realistic photographic preview of a vintage Adidas tracksuit jacket in burgundy red with white three stripes, urban studio lighting"></textarea>
+            </div>
+            <button type="submit" id="btnGenerateAi" class="btn btn-adidas-primary w-100">
+              <i class="fa-solid fa-camera me-2"></i> Generar Vista Previa Fotorrealista
+            </button>
+          </form>
+        </div>
+
+        <div class="col-lg-7 text-center">
+          <div class="p-3 bg-adidas-dark border border-adidas rounded-3 min-h-350px d-flex align-items-center justify-content-center position-relative">
+            <div id="aiImagePlaceholder" class="text-center p-5">
+              <i class="fa-solid fa-image fa-3x text-muted mb-3 d-block"></i>
+              <p class="text-muted mb-0">Haz clic en "Generar Vista Previa" para solicitar una renderización fotográfica con la API de Gemini Image.</p>
+            </div>
+            <div id="aiLoadingSpinner" class="d-none text-center p-5">
+              <div class="spinner-border text-volt mb-3" style="width: 3rem; height: 3rem;" role="status"></div>
+              <p class="text-volt fw-bold mb-0">Generando imagen fotográfica realista...</p>
+            </div>
+            <img id="aiResultImage" class="img-fluid rounded border border-adidas d-none" style="max-height: 400px; object-fit: contain;" alt="Generated Adidas Image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-adidas-dark border-bottom border-adidas">
+    <div class="container">
+      <div class="row align-items-center mb-4">
+        <div class="col-md-8">
+          <span class="text-volt font-heading fw-bold">PRUEBA SOCIAL & COMUNIDAD</span>
+          <h2 class="display-6 fw-bold text-white mb-0">CLIENTES SATISFECHOS EN TOTO VENEZUELA</h2>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          <a href="https://instagram.com/jeanrubio23" target="_blank" class="btn btn-outline-light border-adidas btn-sm">
+            <i class="fa-brands fa-instagram me-1 text-danger"></i> Sigue a @jeanrubio23
+          </a>
+        </div>
+      </div>
+
+      <!-- Verified Reviews Cards -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="card bg-adidas-card border-adidas p-4 h-100">
+            <div class="d-flex align-items-center gap-2 mb-2 text-warning">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-300 small mb-3">
+              "Llegaron mis Adidas Samba en menos de 24 horas a Valencia por Tealca. Verifiqué el código SKU en la caja y 100% originales. El pago por Cashea súper rápido!"
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top border-adidas">
+              <div class="rounded-circle bg-volt text-dark fw-bold d-flex align-items-center justify-content-center" style="width:38px; height:38px;">CR</div>
+              <div>
+                <h6 class="fw-bold text-white mb-0">Carlos R.</h6>
+                <span class="small text-muted"><i class="fa-solid fa-circle-check text-success me-1"></i> Comprador Verificado (Valencia)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-adidas-card border-adidas p-4 h-100">
+            <div class="d-flex align-items-center gap-2 mb-2 text-warning">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-300 small mb-3">
+              "Entregué 2 camisetas retro en el módulo de Re-Commerce y me dieron el crédito en menos de 3 horas. Añadí la diferencia en Pago Móvil a Tasa BCV y estrené tachones."
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top border-adidas">
+              <div class="rounded-circle bg-volt text-dark fw-bold d-flex align-items-center justify-content-center" style="width:38px; height:38px;">MA</div>
+              <div>
+                <h6 class="fw-bold text-white mb-0">Mariana A.</h6>
+                <span class="small text-muted"><i class="fa-solid fa-circle-check text-success me-1"></i> Vendedor & Comprador (Caracas)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card bg-adidas-card border-adidas p-4 h-100">
+            <div class="d-flex align-items-center gap-2 mb-2 text-warning">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="text-gray-300 small mb-3">
+              "La camiseta de la Vinotinto original es impecable. El asistente de tallas me recomendó la L para corte Regular y me quedó perfecta. 100% recomendado."
+            </p>
+            <div class="d-flex align-items-center gap-3 mt-auto pt-3 border-top border-adidas">
+              <div class="rounded-circle bg-volt text-dark fw-bold d-flex align-items-center justify-content-center" style="width:38px; height:38px;">JG</div>
+              <div>
+                <h6 class="fw-bold text-white mb-0">José G.</h6>
+                <span class="small text-muted"><i class="fa-solid fa-circle-check text-success me-1"></i> Comprador Verificado (Barquisimeto)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Offcanvas Drawer -->
+  <div class="offcanvas offcanvas-end bg-adidas-dark text-white border-start border-adidas" tabindex="-1" id="cartOffcanvas">
+    <div class="offcanvas-header border-bottom border-adidas">
+      <h5 class="offcanvas-title font-heading fw-bold"><i class="fa-solid fa-bag-shopping text-volt me-2"></i> TU CARRITO DE COMPRAS</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column" id="cartBody">
+      <!-- Items dynamically populated JS -->
+    </div>
+    <div class="offcanvas-footer p-3 border-top border-adidas bg-adidas-card">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <span class="text-muted">Total USD:</span>
+        <h4 class="fw-bold text-volt mb-0" id="cartTotalUsd">$0.00</h4>
+      </div>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Total VES (Tasa BCV):</span>
+        <span class="fw-bold text-white" id="cartTotalVes">0.00 Bs.</span>
+      </div>
+      <button class="btn btn-adidas-primary w-100 py-3 font-heading" id="btnProceedCheckout" data-bs-toggle="modal" data-bs-target="#checkoutModal" disabled>
+        PROCEDER AL PAGO <i class="fa-solid fa-arrow-right ms-1"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive One-Step Checkout Modal -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-adidas-dark border-adidas">
+        <div class="modal-header border-bottom border-adidas py-3">
+          <h5 class="modal-title font-heading fw-bold text-white"><i class="fa-solid fa-lock text-volt me-2"></i> CHECKOUT INTEGRADO AUTOMATIZADO</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-4">
+            <!-- Shipping Form -->
+            <div class="col-md-6 border-end-md border-adidas">
+              <h6 class="font-heading fw-bold text-volt mb-3"><i class="fa-solid fa-truck-fast me-2"></i> 1. DATOS DE ENVÍO</h6>
+              <div class="row g-2">
+                <div class="col-12">
+                  <label class="form-label small text-muted">Nombre Completo</label>
+                  <input type="text" class="form-control form-control-sm" placeholder="Ej: Jean Rubio" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small text-muted">Cédula de Identidad / RIF</label>
+                  <input type="text" class="form-control form-control-sm" placeholder="Ej: V-19876543" required>
+                </div>
+                <div class="col-6">
+                  <label class="form-label small text-muted">Teléfono WhatsApp</label>
+                  <input type="text" class="form-control form-control-sm" placeholder="04127993831" required>
+                </div>
+                <div class="col-6">
+                  <label class="form-label small text-muted">Estado</label>
+                  <select class="form-select form-select-sm">
+                    <option>Distrito Capital</option>
+                    <option>Carabobo</option>
+                    <option>Zulia</option>
+                    <option>Lara</option>
+                    <option>Aragua</option>
+                    <option>Otro Estado</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label small text-muted">Agencia Receptora o Delivery</label>
+                  <select class="form-select form-select-sm">
+                    <option>MRW (Envío Gratis > $80)</option>
+                    <option>ZOOM Express</option>
+                    <option>Tealca</option>
+                    <option>Delivery Local Caracas (Pago en destino)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Method Form -->
+            <div class="col-md-6">
+              <h6 class="font-heading fw-bold text-volt mb-3"><i class="fa-solid fa-credit-card me-2"></i> 2. MÉTODO DE PAGO</h6>
+              
+              <!-- Payment Tabs -->
+              <ul class="nav nav-tabs border-adidas mb-3" role="tablist">
+                <li class="nav-item">
+                  <button class="nav-link active text-white small p-2" data-bs-toggle="tab" data-bs-target="#payPagoMovil">Pago Móvil</button>
+                </li>
+                <li class="nav-item">
+                  <button class="nav-link text-white small p-2" data-bs-toggle="tab" data-bs-target="#payZelle">Zelle</button>
+                </li>
+                <li class="nav-item">
+                  <button class="nav-link text-white small p-2" data-bs-toggle="tab" data-bs-target="#payCashea">Cashea</button>
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <!-- Pago Movil Tab -->
+                <div class="tab-pane fade show active" id="payPagoMovil">
+                  <div class="p-3 bg-dark border border-adidas rounded mb-3 text-center">
+                    <span class="badge bg-volt text-dark mb-2">TASA BCV OFICIAL DEL DÍA</span>
+                    <div class="d-flex justify-content-center align-items-center gap-3 my-2">
+                      <div class="bg-white p-1 rounded">
+                        <!-- Mock QR Code -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=PagoMovil-0102-04127993831-V19876543" width="90" height="90" alt="QR Pago Movil">
+                      </div>
+                      <div class="text-start small">
+                        <div><strong>Banco:</strong> BNC (0191) / BDV (0102)</div>
+                        <div><strong>Teléfono:</strong> 04127993831</div>
+                        <div><strong>Cédula/RIF:</strong> J-501298730</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-2">
+                    <label class="form-label small text-muted">Número de Referencia (6 dígitos)</label>
+                    <input type="text" id="pagoMovilRef" class="form-control form-control-sm" placeholder="Ej: 849201">
+                  </div>
+                </div>
+
+                <!-- Zelle Tab -->
+                <div class="tab-pane fade" id="payZelle">
+                  <div class="p-3 bg-dark border border-adidas rounded mb-3 small">
+                    <p class="mb-1"><strong>Titular:</strong> Adidas Vnzla Import LLC</p>
+                    <p class="mb-1"><strong>Correo Zelle:</strong> pagos@adidasvenezuela.com</p>
+                    <p class="mb-0 text-muted">Por favor colocar en la nota únicamente el número de orden generado.</p>
+                  </div>
+                  <div class="mb-2">
+                    <label class="form-label small text-muted">Nombre del Titular que envía Zelle</label>
+                    <input type="text" class="form-control form-control-sm" placeholder="Ej: Roberto Gómez">
+                  </div>
+                </div>
+
+                <!-- Cashea Tab -->
+                <div class="tab-pane fade" id="payCashea">
+                  <div class="p-3 bg-dark border border-adidas rounded mb-3 text-center">
+                    <span class="badge bg-warning text-dark font-heading mb-2"><i class="fa-solid fa-layer-group me-1"></i> COMPRA EN 3 CUOTAS SIN INTERÉS</span>
+                    <p class="small text-muted mb-1">Inicial hoy: <strong class="text-volt" id="casheaInitial">$0.00</strong></p>
+                    <p class="small text-muted mb-0">3 Cuotas restantes de: <strong class="text-white" id="casheaCuotas">$0.00</strong> cada 14 días.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Order Summary Box -->
+              <div class="p-3 bg-dark border border-adidas rounded mt-3">
+                <div class="d-flex justify-content-between small text-muted mb-1">
+                  <span>Monto Total a Cancelar:</span>
+                  <strong class="text-volt" id="modalCheckoutTotalUsd">$0.00 USD</strong>
+                </div>
+                <div class="d-flex justify-content-between small text-muted">
+                  <span>Equivalente Tasa BCV:</span>
+                  <strong class="text-white" id="modalCheckoutTotalVes">0.00 VES</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer border-top border-adidas">
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-adidas-primary py-2 px-4" onclick="confirmOrder()">
+            <i class="fa-solid fa-check-circle me-1"></i> Confirmar y Generar Recibo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-adidas-dark border-top border-adidas text-gray-300 pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4">
+          <a class="d-flex align-items-center gap-2 text-decoration-none mb-3" href="#">
+            <i class="fa-brands fa-adidas fa-2x text-white"></i>
+            <span class="font-heading fs-4 fw-bold text-white">ADIDAS <span class="text-volt">VNZLA</span></span>
+          </a>
+          <p class="small text-muted mb-3">
+            Plataforma especializada en venta e intercambio de mercancía Adidas 100% auténtica verificada con SKU en Venezuela. Despacho nacional express.
+          </p>
+          <div class="d-flex gap-3 fs-5">
+            <a href="https://instagram.com/jeanrubio23" target="_blank" class="text-white hover-volt"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/584127993831" target="_blank" class="text-white hover-volt"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="text-white hover-volt"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <h6 class="font-heading text-white fw-bold mb-3">RECIBE OFERTAS Y LANZAMIENTOS</h6>
+          <p class="small text-muted mb-3">Suscríbete y recibe 10% OFF en tu primera compra + acceso anticipado a drops de Samba y Vinotinto.</p>
+          <form onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte! Revisa tu correo con tu código 10% OFF.');">
+            <div class="input-group">
+              <input type="email" class="form-control form-control-sm" placeholder="Tu correo electrónico..." required>
+              <button class="btn btn-adidas-primary btn-sm" type="submit">Suscribirme</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <h6 class="font-heading text-white fw-bold mb-3">MENÚ RÁPIDO</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><a href="#catalog" class="text-muted text-decoration-none hover-white">Catálogo Auténtico</a></li>
+            <li><a href="#recommerce" class="text-muted text-decoration-none hover-white">Vender mi Adidas</a></li>
+            <li><a href="#size-assistant" class="text-muted text-decoration-none hover-white">Asistente de Tallas</a></li>
+            <li><a href="https://instagram.com/jeanrubio23" target="_blank" class="text-muted text-decoration-none hover-white">Instagram @jeanrubio23</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6">
+          <h6 class="font-heading text-white fw-bold mb-3">GARANTÍAS</h6>
+          <ul class="list-unstyled small d-flex flex-column gap-2 mb-0">
+            <li><span class="text-muted"><i class="fa-solid fa-shield-check text-volt me-1"></i> Verificación SKU</span></li>
+            <li><span class="text-muted"><i class="fa-solid fa-building-columns text-volt me-1"></i> Tasa Oficial BCV</span></li>
+            <li><span class="text-muted"><i class="fa-solid fa-rotate-left text-volt me-1"></i> Cambios de Talla</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-top border-adidas pt-4 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 small text-muted">
+        <div>
+          © 2026 Adidas Vnzla Specialised Re-Commerce Store. Todos los derechos reservados.
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <span>Soporte directo por Instagram: <a href="https://instagram.com/jeanrubio23" target="_blank" class="text-volt text-decoration-none">@jeanrubio23</a></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-container">
+    <!-- Instagram Floater -->
+    <a href="https://instagram.com/jeanrubio23" target="_blank" class="float-btn float-instagram" title="Síguenos en Instagram @jeanrubio23">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    
+    <!-- WhatsApp Floater -->
+    <a href="https://wa.me/584127993831?text=Hola!%20Vengo%20de%20la%20pagina%20web.%20Quiero%20consultar%20disponibilidad%20o%20vender%20una%20prenda%20Adidas." target="_blank" class="float-btn float-whatsapp" title="Chat directo con asesor WhatsApp">
+      <span class="pulse-badge"></span>
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Exchange rate config (Simulated BCV Official Rate)
+    let bcvRate = 36.50;
+    let currentCurrency = 'USD'; // USD or VES
+
+    // Sample Verified Adidas Catalog Products
+    const products = [
+      {
+        id: 1,
+        title: "Adidas Samba OG White Black",
+        line: "Originals Lifestyle",
+        category: "Originals",
+        priceUsd: 110.00,
+        sku: "B75806",
+        img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80",
+        sizes: ["US 7.5", "US 8.5", "US 9.0", "US 10.0"],
+        badge: "Top Ventas"
+      },
+      {
+        id: 2,
+        title: "Camiseta Oficial Selección Vinotinto 2024/25",
+        line: "Fútbol & Selecciones",
+        category: "Fútbol",
+        priceUsd: 85.00,
+        sku: "IP2024-VINO",
+        img: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80",
+        sizes: ["S", "M", "L", "XL"],
+        badge: "100% Auténtico"
+      },
+      {
+        id: 3,
+        title: "Adidas Ultraboost Light Running",
+        line: "Performance Running",
+        category: "Running",
+        priceUsd: 140.00,
+        sku: "GY9350",
+        img: "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?auto=format&fit=crop&w=600&q=80",
+        sizes: ["US 8.0", "US 9.5", "US 10.5"],
+        badge: "Máximo Confort"
+      },
+      {
+        id: 4,
+        title: "Adidas Gazelle Bold Platform Women",
+        line: "Originals Lifestyle",
+        category: "Originals",
+        priceUsd: 120.00,
+        sku: "HQ6893",
+        img: "https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=600&q=80",
+        sizes: ["US 6.0", "US 6.5", "US 7.5"],
+        badge: "Tendencia Streetwear"
+      },
+      {
+        id: 5,
+        title: "Chaqueta Retro Adidas Beckenbauer Tracktop",
+        line: "Originals Heritage",
+        category: "Outlet",
+        priceUsd: 65.00,
+        sku: "HK7321",
+        img: "https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=600&q=80",
+        sizes: ["M", "L"],
+        badge: "30% OFF Fin Temporada"
+      },
+      {
+        id: 6,
+        title: "Zapatos de Fútbol Adidas Predator Elite FG",
+        line: "Fútbol Professional",
+        category: "Fútbol",
+        priceUsd: 180.00,
+        sku: "IG7762",
+        img: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=600&q=80",
+        sizes: ["US 8.5", "US 9.5", "US 10.0"],
+        badge: "Nivel Pro"
+      }
+    ];
+
+    let cart = [];
+
+    function renderProducts(items) {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = '';
+
+      if (items.length === 0) {
+        grid.innerHTML = `<div class="col-12 text-center py-5 text-muted">No se encontraron productos en esta categoría.</div>`;
+        return;
+      }
+
+      items.forEach(p => {
+        const priceVes = (p.priceUsd * bcvRate).toFixed(2);
+        const sizeChips = p.sizes.map(s => `<span class="size-chip">${s}</span>`).join(' ');
+
+        const col = document.createElement('div');
+        col.className = 'col-lg-4 col-md-6';
+        col.innerHTML = `
+          <div class="product-card">
+            <div class="product-img-wrapper">
+              <span class="badge-sku"><i class="fa-solid fa-barcode me-1"></i> SKU: ${p.sku}</span>
+              <img src="${p.img}" alt="${p.title}" loading="lazy">
+            </div>
+            <div class="p-3 d-flex flex-column flex-grow-1">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <span class="small text-volt font-heading">${p.line}</span>
+                <span class="badge bg-dark border border-adidas text-white">${p.badge}</span>
+              </div>
+              <h5 class="fw-bold text-white mb-2" style="font-size: 1.1rem;">${p.title}</h5>
+              
+              <div class="mb-3">
+                <span class="small text-muted d-block mb-1">Tallas Disponibles:</span>
+                <div class="d-flex flex-wrap gap-1">${sizeChips}</div>
+              </div>
+
+              <div class="mt-auto pt-3 border-top border-adidas d-flex align-items-center justify-content-between">
+                <div>
+                  <h4 class="fw-bold text-volt mb-0">$${p.priceUsd.toFixed(2)} USD</h4>
+                  <span class="small text-muted">${priceVes} VES (BCV)</span>
+                </div>
+                <button class="btn btn-adidas-primary btn-sm" onclick="addToCart(${p.id})">
+                  <i class="fa-solid fa-cart-plus me-1"></i> Añadir
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        grid.appendChild(col);
+      });
+    }
+
+    function filterCategory(cat) {
+      // Update Tab Styles
+      document.querySelectorAll('#filterTabs button').forEach(b => {
+        if(b.textContent.includes(cat) || (cat === 'Todos' && b.textContent === 'Todos')) {
+          b.classList.add('active', 'bg-volt', 'text-dark');
+          b.classList.remove('btn-dark');
+        } else {
+          b.classList.remove('active', 'bg-volt', 'text-dark');
+          b.classList.add('btn-dark');
+        }
+      });
+
+      if (cat === 'Todos') {
+        renderProducts(products);
+      } else {
+        const filtered = products.filter(p => p.category === cat);
+        renderProducts(filtered);
+      }
+    }
+
+    function addToCart(productId) {
+      const item = products.find(p => p.id === productId);
+      if (!item) return;
+
+      const existing = cart.find(c => c.id === productId);
+      if (existing) {
+        existing.qty++;
+      } else {
+        cart.push({ ...item, qty: 1 });
+      }
+
+      updateCartUI();
+      // Open cart automatically
+      const bsOffcanvas = new bootstrap.Offcanvas(document.getElementById('cartOffcanvas'));
+      bsOffcanvas.show();
+    }
+
+    function updateCartUI() {
+      const cartBody = document.getElementById('cartBody');
+      const badgeCount = document.getElementById('cartBadgeCount');
+      const cartTotalUsd = document.getElementById('cartTotalUsd');
+      const cartTotalVes = document.getElementById('cartTotalVes');
+      const btnProceed = document.getElementById('btnProceedCheckout');
+
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      badgeCount.textContent = totalItems;
+
+      if (cart.length === 0) {
+        cartBody.innerHTML = `
+          <div class="text-center py-5 text-muted my-auto">
+            <i class="fa-solid fa-bag-shopping fa-3x mb-3 d-block"></i>
+            <p>Tu carrito está vacío actualmente.</p>
+            <a href="#catalog" class="btn btn-sm btn-outline-light" data-bs-dismiss="offcanvas">Explorar Catálogo</a>
+          </div>
+        `;
+        cartTotalUsd.textContent = "$0.00";
+        cartTotalVes.textContent = "0.00 Bs.";
+        btnProceed.disabled = true;
+        return;
+      }
+
+      let totalUsd = 0;
+      cartBody.innerHTML = '';
+
+      cart.forEach(item => {
+        const subtotalUsd = item.priceUsd * item.qty;
+        totalUsd += subtotalUsd;
+
+        const row = document.createElement('div');
+        row.className = 'p-2 mb-2 bg-dark border border-adidas rounded d-flex align-items-center justify-content-between';
+        row.innerHTML = `
+          <div class="d-flex align-items-center gap-2">
+            <img src="${item.img}" width="50" height="50" class="rounded object-fit-cover" alt="${item.title}">
+            <div>
+              <h6 class="fw-bold text-white mb-0" style="font-size: 0.85rem;">${item.title}</h6>
+              <span class="small text-volt">$${item.priceUsd.toFixed(2)} x ${item.qty}</span>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-sm btn-outline-secondary py-0 px-2 text-white" onclick="changeQty(${item.id}, -1)">-</button>
+            <span class="fw-bold">${item.qty}</span>
+            <button class="btn btn-sm btn-outline-secondary py-0 px-2 text-white" onclick="changeQty(${item.id}, 1)">+</button>
+          </div>
+        `;
+        cartBody.appendChild(row);
+      });
+
+      const totalVes = totalUsd * bcvRate;
+      cartTotalUsd.textContent = `$${totalUsd.toFixed(2)} USD`;
+      cartTotalVes.textContent = `${totalVes.toLocaleString('es-VE', {minimumFractionDigits: 2})} VES`;
+      btnProceed.disabled = false;
+
+      // Update Checkout Modal numbers
+      document.getElementById('modalCheckoutTotalUsd').textContent = `$${totalUsd.toFixed(2)} USD`;
+      document.getElementById('modalCheckoutTotalVes').textContent = `${totalVes.toLocaleString('es-VE', {minimumFractionDigits: 2})} VES`;
+      
+      // Cashea breakdown
+      const initialCashea = totalUsd * 0.5; // 50% initial
+      const cuotaCashea = (totalUsd * 0.5) / 3;
+      document.getElementById('casheaInitial').textContent = `$${initialCashea.toFixed(2)} USD`;
+      document.getElementById('casheaCuotas').textContent = `$${cuotaCashea.toFixed(2)} USD`;
+    }
+
+    function changeQty(id, delta) {
+      const item = cart.find(c => c.id === id);
+      if (!item) return;
+
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(c => c.id !== id);
+      }
+      updateCartUI();
+    }
+
+    function setupSizeAssistant() {
+      const footInput = document.getElementById('footCmInput');
+      const shoeFitType = document.getElementById('shoeFitType');
+
+      function calculateShoeSize() {
+        const cm = parseFloat(footInput.value) || 26.5;
+        const fit = shoeFitType.value;
+
+        // Base sizing mapping (Approx US Men)
+        let baseUs = (cm - 18) * 0.95;
+        if (fit === 'slim') baseUs += 0.5; // Recommendation for tight Samba fit
+
+        const roundedUs = (Math.round(baseUs * 2) / 2).toFixed(1);
+        const eur = Math.round(cm * 1.5 + 2.5);
+
+        document.getElementById('recommendedSizeResult').textContent = `US ${roundedUs}`;
+        document.getElementById('recommendedEur').textContent = `EUR ${eur} | ${cm} CM`;
+
+        if (fit === 'slim') {
+          document.getElementById('fitAdviceText').innerHTML = `<strong>Ajuste Samba/Gazelle:</strong> La horma es fina en empeine. Para máxima comodidad sugerimos seleccionar <strong>US ${roundedUs}</strong> (+0.5 talla respecto a tu estándar).`;
+        } else {
+          document.getElementById('fitAdviceText').innerHTML = `<strong>Ajuste Standard Performance:</strong> Tu talla exacta en calzado deportivo es <strong>US ${roundedUs}</strong>.`;
+        }
+      }
+
+      footInput.addEventListener('input', calculateShoeSize);
+      shoeFitType.addEventListener('change', calculateShoeSize);
+      calculateShoeSize();
+    }
+
+    function setupTradeInCalculator() {
+      const tradeType = document.getElementById('tradeType');
+      const tradeCond = document.getElementById('tradeCondition');
+      const estimatedVal = document.getElementById('estimatedValue');
+      const estimatedVes = document.getElementById('estimatedVes');
+
+      function recalculateTrade() {
+        let base = 50;
+        if (tradeType.value.includes('Originals')) base = 60;
+        if (tradeType.value.includes('Chaqueta')) base = 40;
+
+        let multiplier = 0.7;
+        if (tradeCond.value.includes('Nuevo')) multiplier = 1.0;
+        if (tradeCond.value.includes('Excelente')) multiplier = 0.85;
+
+        const finalVal = base * multiplier;
+        const vesVal = finalVal * bcvRate;
+
+        estimatedVal.textContent = `$${finalVal.toFixed(2)} USD`;
+        estimatedVes.textContent = `~ ${vesVal.toLocaleString('es-VE', {minimumFractionDigits: 2})} VES (BCV)`;
+      }
+
+      tradeType.addEventListener('change', recalculateTrade);
+      tradeCond.addEventListener('change', recalculateTrade);
+
+      document.getElementById('tradeInForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const type = tradeType.value;
+        const sku = document.getElementById('tradeSku').value || 'Sin SKU';
+        const size = document.getElementById('tradeSize').value;
+        const val = estimatedVal.textContent;
+
+        const msg = encodeURIComponent(`Hola! Deseo cotizar mi prenda Adidas para Venta/Canje:\n- Tipo: ${type}\n- SKU/Ref: ${sku}\n- Talla: ${size}\n- Cotización Estimada Web: ${val}`);
+        window.open(`https://wa.me/584127993831?text=${msg}`, '_blank');
+      });
+    }
+
+    function setupGeminiAiLab() {
+      const form = document.getElementById('aiImageForm');
+      const promptInput = document.getElementById('aiPromptInput');
+      const btnBtn = document.getElementById('btnGenerateAi');
+      const placeholder = document.getElementById('aiImagePlaceholder');
+      const spinner = document.getElementById('aiLoadingSpinner');
+      const resultImg = document.getElementById('aiResultImage');
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const userPrompt = promptInput.value.trim();
+        if (!userPrompt) return;
+
+        placeholder.classList.add('d-none');
+        resultImg.classList.add('d-none');
+        spinner.classList.remove('d-none');
+        btnBtn.disabled = true;
+
+        try {
+          const apiKey = ""; // Canvas runtime environment key handler
+          const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image:generateContent?key=${apiKey}`;
+
+          const payload = {
+            contents: [{ parts: [{ text: userPrompt }] }],
+            generationConfig: {
+              responseModalities: ['TEXT', 'IMAGE']
+            }
+          };
+
+          const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          const data = await response.json();
+          const base64Data = data?.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+
+          if (base64Data) {
+            resultImg.src = `data:image/png;base64,${base64Data}`;
+            resultImg.classList.remove('d-none');
+          } else {
+            alert('No se pudo generar la imagen en este momento. Inténtelo de nuevo.');
+            placeholder.classList.remove('d-none');
+          }
+        } catch (err) {
+          console.error(err);
+          alert('Ocurrió un error al conectar con Gemini Flash Image API.');
+          placeholder.classList.remove('d-none');
+        } finally {
+          spinner.classList.add('d-none');
+          btnBtn.disabled = false;
+        }
+      });
+    }
+
+    function confirmOrder() {
+      const ref = document.getElementById('pagoMovilRef').value;
+      alert(`¡Orden procesada con éxito! Su comprobante ha sido registrado. Un asesor verificará el pago y despachará por la agencia seleccionada. ¡Gracias por tu compra!`);
+      cart = [];
+      updateCartUI();
+      const modalEl = document.getElementById('checkoutModal');
+      const modal = bootstrap.Modal.getInstance(modalEl);
+      if (modal) modal.hide();
+    }
+
+    window.onload = function() {
+      renderProducts(products);
+      setupSizeAssistant();
+      setupTradeInCalculator();
+      setupGeminiAiLab();
+
+      // Search Filter Listener
+      document.getElementById('searchInput').addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase();
+        const filtered = products.filter(p => 
+          p.title.toLowerCase().includes(query) || 
+          p.sku.toLowerCase().includes(query) || 
+          p.line.toLowerCase().includes(query)
+        );
+        renderProducts(filtered);
+      });
+
+      // Currency Switchers
+      document.getElementById('btnUSD').addEventListener('click', function() {
+        this.classList.add('active-curr', 'btn-dark');
+        this.classList.remove('btn-outline-secondary');
+        document.getElementById('btnVES').classList.remove('active-curr', 'btn-dark');
+        document.getElementById('btnVES').classList.add('btn-outline-secondary');
+        currentCurrency = 'USD';
+        renderProducts(products);
+      });
+
+      document.getElementById('btnVES').addEventListener('click', function() {
+        this.classList.add('active-curr', 'btn-dark');
+        this.classList.remove('btn-outline-secondary');
+        document.getElementById('btnUSD').classList.remove('active-curr', 'btn-dark');
+        document.getElementById('btnUSD').classList.add('btn-outline-secondary');
+        currentCurrency = 'VES';
+        renderProducts(products);
+      });
+    };
+  </script>
+</body>
+</html>
